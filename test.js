@@ -5,9 +5,9 @@ if (Meteor.isClient) {
     'click input' : function () {
 
       //call the async function from the client
-      Meteor.call("asyncJob", "async test", function(message){
+      Meteor.call("asyncJob", "async test", function(err, res){
 
-        alert(message);
+        alert(res);
 
       });
     }
