@@ -15,12 +15,14 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+
   Meteor.startup(function () {
     var require = __meteor_bootstrap__.require
     Future = require('fibers/future');
   });
 
   Meteor.methods({
+
     asyncJob: function(message) {
 
       //log the message to server
@@ -41,5 +43,5 @@ if (Meteor.isServer) {
       // the result
       return fut.wait();
     }
-}); 
+  });
 }
