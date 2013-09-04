@@ -17,8 +17,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
 
   Meteor.startup(function () {
-    var require = __meteor_bootstrap__.require
-    Future = require('fibers/future');
+    Future = Npm.require('fibers/future');
   });
 
   Meteor.methods({
@@ -35,7 +34,7 @@ if (Meteor.isServer) {
       setTimeout(function() {
 
         // Return the results
-        fut.ret(message + " (delayed for 3 seconds)");
+        fut['return'](message + " (delayed for 3 seconds)");
 
       }, 3 * 1000);
 
